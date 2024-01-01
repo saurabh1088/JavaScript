@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>HTML with embedded JavaScript</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>JavaScript Playground</h1>
+
+    <p>Aim of this document is to act as a playground to try out JavaScript.</p>
+
+    <button id="changeBackgroundColorToRed">Red</button>
+
+    <script>
+      // JavaScript code goes here
+
+      // Fetch the button element from document using getElementById
+      var changeColorToRedButton = document.getElementById("changeBackgroundColorToRed");
+
+      // Add an event listener to button
+      changeColorToRedButton.addEventListener("click", changeColorToRed);
+
+      // Function definition, due to hoisting it doesn't matter that the function is declared here but used above in 
+      // addEventListener already, it won't give any issues.
+      function changeColorToRed() {
+        document.body.style.backgroundColor = "red";
+      }
+
+    </script>
+  </body>
+</html>

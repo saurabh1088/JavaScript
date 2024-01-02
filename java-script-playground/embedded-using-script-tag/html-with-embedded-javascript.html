@@ -35,6 +35,12 @@
 
     <button id="changeBackgroundColorToRed">Red</button>
 
+    <h2>let, var & const</h2>
+
+    <button id="buttonForLetVariableExample">let</button>
+
+    <button id="buttonForVarVariableExample">var</button>
+
     <script>
       // JavaScript code goes here
 
@@ -51,5 +57,44 @@
       }
 
     </script>
+
+    <script>
+      // let
+
+      let someLetVariable = "let variable"
+      let buttonForLetVariableExample = document.getElementById("buttonForLetVariableExample");
+      buttonForLetVariableExample.addEventListener("click", exampleLetVariable);
+      
+      function exampleLetVariable() {
+        console.log("Defined a let variable someLetVariable, let's print it's value")
+        console.log(someLetVariable)
+        console.log("Let's change value for someLetVariable")
+        someLetVariable = "let variable update value"
+        console.log(someLetVariable)
+      }
+    </script>
+
+    <script>
+      // var
+
+      // Here we are assigning some value to someVarVariable which is actually declared at last. Due to hoisting this code
+      // works just fine. Even the funtion exampleVarVariable is used first and then the declaration comes later, and because
+      // functions are also hoisted, it works fine.
+      someVarVariable = "var variable";
+      let buttonForVarVariableExample = document.getElementById("buttonForVarVariableExample");
+      buttonForVarVariableExample.addEventListener("click", exampleVarVariable);
+
+      function exampleVarVariable() {
+        console.log("Defined a var variable someVarVariable, let's print it's value")
+        console.log(someVarVariable)
+        console.log("Let's change value for someVarVariable")
+        someVarVariable = "var variable updated value"
+        console.log(someVarVariable)
+      }
+
+      var someVarVariable;
+
+    </script>
+
   </body>
 </html>

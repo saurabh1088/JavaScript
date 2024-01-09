@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>HTML with JavaScript in external file</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+    
+    <script src="ExternalJavaScriptFileUsingDOMContentLoaded.js"></script>
+
+  </head>
+
+  <body>
+
+    <h1>JavaScript Playground</h1>
+
+    <p>Aim of this document is to act as a playground to try out JavaScript. Here all the JavaScript code goes into separate JavaScript files.</p>
+
+    <p>This particular examples show how one uses external JavaScript files using HTML tag script.</p>
+
+    <button id="changeBackgroundColor">Change color</button>
+
+  </body>
+</html>

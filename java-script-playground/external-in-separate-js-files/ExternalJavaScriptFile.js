@@ -43,3 +43,15 @@ function exampleVarVariable() {
 var someVarVariable;
 
 // Function with return values
+let buttonForCallingFunctionReturningSomeValue = document.getElementById("buttonForCallingFunctionReturningSomeValue");
+buttonForCallingFunctionReturningSomeValue.addEventListener("click", exampleFunctionReturningSomeValue);
+
+// Notice that in function definition after brackets there is no indication required which suggests this is a funtion which
+// will return some value. It's only in funtion implementation last line with keyword return one can figure out it's a returning
+// funtion
+function exampleFunctionReturningSomeValue() {
+  let randomValue = Math.random()
+  console.log("Generated random value")
+  console.log(randomValue)
+  return randomValue
+}

@@ -77,3 +77,15 @@ function eventHandlerTwo() {
   multipleEventListenerTargetTwoElement.textContent = "Handled event in handler two";
   multipleEventListenerTargetTwoElement.style.color = "blue";
 }
+
+// Using Event handler properties
+
+let buttonWithEventHandlerPropertiesSet = document.getElementById("buttonWithEventHandlerPropertiesSet");
+let eventHandlerPropertiesTargetElement = document.getElementById("eventHandlerPropertiesTarget");
+
+buttonWithEventHandlerPropertiesSet.onclick = eventHandlerAssignedToOnClick
+
+function eventHandlerAssignedToOnClick() {
+  console.log("Event handled which was assigned to event handler properties");
+  eventHandlerPropertiesTargetElement.textContent = "Event handled which was assigned to event handler properties";
+}

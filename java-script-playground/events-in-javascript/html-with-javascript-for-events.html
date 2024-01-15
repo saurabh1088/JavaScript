@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+
+    <title>HTML/JavaScript Events</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      
+      .form input[type="number"] {
+        width: 200px;
+      }
+
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>    
+
+  </head>
+
+  <body>
+
+    <h1>JavaScript Playground</h1>
+
+    <p>Aim of this document is to explore concepts of events in JavaScript.</p>
+
+    <!--About : Event handling using addEventListener()-->
+    <h2>Event handling using addEventListener()</h2>
+
+    <button id="buttonTrigerringEventUsingAddEventListener">Add Event Listener</button>
+
+    <p id="targetForButtonTrigerringEventUsingAddEventListener"></p>
+
+    <!--About : Event handling using object properties-->
+
+    <h2>Event handling using object properties</h2>
+
+    <button id="buttonTrigerringEventUsingObjectProperties">Event handler properties</button>
+
+    <p id="targetForButtonTrigerringEventUsingObjectProperties"></p>
+
+    <!--About : Inline event handlers - NOT RECOMMENDED-->
+
+    <h2>Inline event handlers - NOT RECOMMENDED</h2>
+
+    <button id="buttonTrigerringEventUsingInlineEventHandler" onclick="eventHandledForButtonTrigerringEventUsingInlineEventHandler()">Inline event handlers</button>
+
+    <p id="targetForButtonTrigerringEventUsingInlineEventHandler"></p>
+
+    <!-- This script if placed in <head> will cause an error as placing in <head> will cause script to execute first
+      however as script is referencing parts of this HTML document which wouldn't have loaded till then hence error will
+      be thrown.
+      Hence this script is reference here in <body> at the end so that the page is loaded and script can work properly.
+    -->
+    <script src="events.js"></script>
+
+  </body>
+</html>

@@ -22,3 +22,12 @@ function eventHandledForButtonTrigerringEventUsingInlineEventHandler() {
   let targetForButtonTrigerringEventUsingInlineEventHandler = document.getElementById("targetForButtonTrigerringEventUsingInlineEventHandler");
   targetForButtonTrigerringEventUsingInlineEventHandler.textContent = "Handled event using HTML inline attribute.";
 }
+
+// Event Objects
+let buttonTrigerringEventHandledByMethodExploringEventObjects = document.getElementById("buttonTrigerringEventHandledByMethodExploringEventObjects");
+buttonTrigerringEventHandledByMethodExploringEventObjects.addEventListener("click", eventHandlerExploringEventObject);
+
+function eventHandlerExploringEventObject(event) {
+  console.log("Here's the event object received...")
+  console.log(event)
+}

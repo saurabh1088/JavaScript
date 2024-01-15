@@ -54,9 +54,19 @@
 
     <h2>Inline event handlers - NOT RECOMMENDED</h2>
 
+    <!--One important point to note here is that in quotes for attribute onclick one needs to use brackets (), otherwise 
+      it will not work. Thus we need to use eventHandledForButtonTrigerringEventUsingInlineEventHandler() and not just
+      eventHandledForButtonTrigerringEventUsingInlineEventHandler.
+    -->
     <button id="buttonTrigerringEventUsingInlineEventHandler" onclick="eventHandledForButtonTrigerringEventUsingInlineEventHandler()">Inline event handlers</button>
 
     <p id="targetForButtonTrigerringEventUsingInlineEventHandler"></p>
+
+    <!--About : Event objects-->
+
+    <h2>Event Objects</h2>
+
+    <button id="buttonTrigerringEventHandledByMethodExploringEventObjects">Event Objects</button>
 
     <!-- This script if placed in <head> will cause an error as placing in <head> will cause script to execute first
       however as script is referencing parts of this HTML document which wouldn't have loaded till then hence error will

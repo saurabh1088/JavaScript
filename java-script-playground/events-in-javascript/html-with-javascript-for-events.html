@@ -68,6 +68,26 @@
 
     <button id="buttonTrigerringEventHandledByMethodExploringEventObjects">Event Objects</button>
 
+    <!--About : Preventing default behavior-->
+
+    <h2>Preventing default behavior</h2>
+
+    <form id="formToTryPreventingDefaultBehaviour">
+      <div>
+        <label for="coolName">Cool Name:</label>
+        <input id="coolName", type="text"/>
+      </div>
+      <div>
+        <label for="team">Team:</label>
+        <input id="team", type="text"/>
+      </div>
+      <div>
+        <input id="submit", type="submit"/>
+      </div>
+    </form>
+
+    <p id="messageForFormSubmition"></p>
+
     <!-- This script if placed in <head> will cause an error as placing in <head> will cause script to execute first
       however as script is referencing parts of this HTML document which wouldn't have loaded till then hence error will
       be thrown.

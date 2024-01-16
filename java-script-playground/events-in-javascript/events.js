@@ -31,3 +31,17 @@ function eventHandlerExploringEventObject(event) {
   console.log("Here's the event object received...")
   console.log(event)
 }
+
+// Preventing Default Behaviour
+let formToTryPreventingDefaultBehaviour = document.getElementById("formToTryPreventingDefaultBehaviour");
+let coolNameElement = document.getElementById("coolName");
+let teamElement = document.getElementById("team");
+
+formToTryPreventingDefaultBehaviour.addEventListener("submit", (event) => {
+  if (coolNameElement.value === "" || teamElement.value === "") {
+    event.preventDefault();
+    console.log("Event listener on form");
+    let messageForFormSubmitionElement = document.getElementById("messageForFormSubmition");
+    messageForFormSubmitionElement.textContent = "You need to input some values to proceed!"
+  }
+});

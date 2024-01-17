@@ -1,3 +1,4 @@
+// =====================================================================================================================
 // Event handling using addEventListener()
 let buttonTrigerringEventUsingAddEventListener = document.getElementById("buttonTrigerringEventUsingAddEventListener");
 buttonTrigerringEventUsingAddEventListener.addEventListener("click", eventHandlerForButtonTrigerringEventUsingAddEventListener);
@@ -7,6 +8,8 @@ function eventHandlerForButtonTrigerringEventUsingAddEventListener() {
   targetForButtonTrigerringEventUsingAddEventListenerElement.textContent = "Handled event using addEventListener()";
 }
 
+   
+// =====================================================================================================================
 // Event handling using object properties
 let buttonTrigerringEventUsingObjectProperties = document.getElementById("buttonTrigerringEventUsingObjectProperties");
 buttonTrigerringEventUsingObjectProperties.onclick = eventHandlerForButtonTrigerringEventUsingObjectProperties;
@@ -16,6 +19,7 @@ function eventHandlerForButtonTrigerringEventUsingObjectProperties() {
   targetForButtonTrigerringEventUsingObjectProperties.textContent = "Handled event using object properties";
 }
 
+// =====================================================================================================================
 // Inline event handlers - NOT RECOMMENDED
 function eventHandledForButtonTrigerringEventUsingInlineEventHandler() {
   console.log("Executing eventHandledForButtonTrigerringEventUsingInlineEventHandler...")
@@ -23,6 +27,7 @@ function eventHandledForButtonTrigerringEventUsingInlineEventHandler() {
   targetForButtonTrigerringEventUsingInlineEventHandler.textContent = "Handled event using HTML inline attribute.";
 }
 
+// =====================================================================================================================
 // Event Objects
 let buttonTrigerringEventHandledByMethodExploringEventObjects = document.getElementById("buttonTrigerringEventHandledByMethodExploringEventObjects");
 buttonTrigerringEventHandledByMethodExploringEventObjects.addEventListener("click", eventHandlerExploringEventObject);
@@ -32,6 +37,7 @@ function eventHandlerExploringEventObject(event) {
   console.log(event)
 }
 
+// =====================================================================================================================
 // Preventing Default Behaviour
 let formToTryPreventingDefaultBehaviour = document.getElementById("formToTryPreventingDefaultBehaviour");
 let coolNameElement = document.getElementById("coolName");
@@ -45,3 +51,15 @@ formToTryPreventingDefaultBehaviour.addEventListener("submit", (event) => {
     messageForFormSubmitionElement.textContent = "You need to input some values to proceed!"
   }
 });
+
+// =====================================================================================================================
+// Event bubbling
+let parentContainerForEventBubbling = document.getElementById("parentContainerForEventBubbling");
+let childElementForEventBubbling = document.getElementById("childElementForEventBubbling");
+
+parentContainerForEventBubbling.addEventListener("click", eventHandlerToCheckEventBubble);
+childElementForEventBubbling.addEventListener("click", eventHandlerToCheckEventBubble);
+
+function eventHandlerToCheckEventBubble(event) {
+  console.log(event.currentTarget.tagName)
+}

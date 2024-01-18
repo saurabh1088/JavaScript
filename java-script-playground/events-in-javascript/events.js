@@ -57,9 +57,32 @@ formToTryPreventingDefaultBehaviour.addEventListener("submit", (event) => {
 let parentContainerForEventBubbling = document.getElementById("parentContainerForEventBubbling");
 let childElementForEventBubbling = document.getElementById("childElementForEventBubbling");
 
-parentContainerForEventBubbling.addEventListener("click", eventHandlerToCheckEventBubble);
-childElementForEventBubbling.addEventListener("click", eventHandlerToCheckEventBubble);
+parentContainerForEventBubbling.addEventListener("click", eventHandlerForClickEventForParent);
+childElementForEventBubbling.addEventListener("click", eventHandlerForClickEventForChild);
 
-function eventHandlerToCheckEventBubble(event) {
-  console.log(event.currentTarget.tagName)
+function eventHandlerForClickEventForParent(event) {
+  console.log("Handling event for parent element")
+  console.log(event.currentTarget.tagName);
+}
+
+function eventHandlerForClickEventForChild(event) {
+  console.log("Handling event for child element")
+  console.log(event.currentTarget.tagName);
+}
+
+let parentContainerForEventBubblingStopPropagation = document.getElementById("parentContainerForEventBubblingStopPropagation");
+let childElementForEventBubblingStopPropagation = document.getElementById("childElementForEventBubblingStopPropagation");
+
+parentContainerForEventBubblingStopPropagation.addEventListener("click", eventHandlerForClickEventForParentWhenChildHandlingStopPropagation);
+childElementForEventBubblingStopPropagation.addEventListener("click", eventHandlerForClickEventForChildWithStopPropagation);
+
+function eventHandlerForClickEventForParentWhenChildHandlingStopPropagation(event) {
+  console.log("Handling event for parent element")
+  console.log(event.currentTarget.tagName);
+}
+
+function eventHandlerForClickEventForChildWithStopPropagation(event) {
+  console.log("Handling event for child element")
+  event.stopPropagation();
+  console.log(event.currentTarget.tagName);
 }

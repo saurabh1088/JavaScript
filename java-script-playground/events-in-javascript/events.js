@@ -86,3 +86,43 @@ function eventHandlerForClickEventForChildWithStopPropagation(event) {
   event.stopPropagation();
   console.log(event.currentTarget.tagName);
 }
+
+// =====================================================================================================================
+// Event capture
+
+let parentContainerForEventCapture = document.getElementById("parentContainerForEventCapture");
+let childElementForEventCapture = document.getElementById("childElementForEventCapture");
+
+/*
+If addEventListener is used like below then this example will result in normal bubbling behaviour. So when button is tapped
+then it will print out below output on console :
+
+Handling event for child element
+BUTTON
+Handling event for parent element
+DIV
+
+parentContainerForEventCapture.addEventListener("click", eventHandlerForClickEventForParentWithCapture);
+childElementForEventCapture.addEventListener("click", eventHandlerForClickEventForChildWithCapture);
+
+However if for parent, in addEventListener we pass capture as true then the behaviour of event capture will be observed and
+output will come like below :
+
+Handling event for parent element
+DIV
+Handling event for child element
+BUTTON
+*/
+
+parentContainerForEventCapture.addEventListener("click", eventHandlerForClickEventForParentWithCapture, { capture: true });
+childElementForEventCapture.addEventListener("click", eventHandlerForClickEventForChildWithCapture);
+
+function eventHandlerForClickEventForParentWithCapture(event) {
+  console.log("Handling event for parent element")
+  console.log(event.currentTarget.tagName);
+}
+
+function eventHandlerForClickEventForChildWithCapture(event) {
+  console.log("Handling event for child element")
+  console.log(event.currentTarget.tagName);
+} 

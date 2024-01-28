@@ -1,6 +1,8 @@
 // =====================================================================================================================
 const encryptionKey = "thekey";
 
+let dynamicKey = "";
+
 let encryptedValue = CryptoJS.AES.encrypt('themessage', encryptionKey);
 console.log('encrypted', encryptedValue);
 console.log(encryptedValue.toString());
@@ -30,4 +32,23 @@ function performDecryption() {
     console.log("Performing decryption...");
     let decryptedValue = CryptoJS.AES.decrypt(encryptedValue, encryptionKey);
     decryptedValueElement.textContent = decryptedValue.toString(CryptoJS.enc.Utf8);
+    setKey();
+    encryptUsingIV();
+}
+
+function setKey() {
+    console.log("Setting key using PBKDF2...");
+    dynamicKey = CryptoJS.PBKDF2("passphrase", CryptoJS.lib.WordArray.random(128/8), { 
+        keySize: 256/32, 
+        iterations: 10000 
+    });
+    console.log(dynamicKey.toString());
+}
+
+function encryptUsingIV() {
+    let cipherData = CryptoJS.AES.encrypt("saurabh", dynamicKey, { 
+        iv: CryptoJS.enc.Hex.parse("iv") 
+    });
+    console.log("Calculated cipherData...");
+    console.log(cipherData.toString());
 }
